@@ -23,71 +23,71 @@
 
 //문제 24: 대문자로 바꾸기
 // 이름이 입력되면 전부 대문자로 출력되는 프로그램
-// {
-//   const name = prompt('이름을 입력하세요.');
-//   const result = name.toUpperCase();
+{
+  const name = prompt('이름을 입력하세요.');
+  const result = name.toUpperCase();
 
-//   console.log(result);
-// }
+  console.log(result);
+}
 
 // //문제 25: 원의 넓이를 구하라
 // // 입력으로 반지름의 길이 정수 n이 주어지면 원의 넓이를 반환하는 함수를 생성
-// {
-//   function area(n) {
-//     return 3.14 * n * n;
-//   }
+{
+  function area(n) {
+    return 3.14 * n * n;
+  }
 
-//   const radius = parseInt(prompt('반지름을 입력해주세요.'));
-//   const result = area(radius);
-//   console.log(result);
-// }
+  const radius = parseInt(prompt('반지름을 입력해주세요.'));
+  const result = area(radius);
+  console.log(result);
+}
 
 //문제 26: 행성문제 2
 //태양계를 이루는 행성은 수성, 금성, 지구, 화성, 목성, 토성, 천왕성, 해왕성이 있다.
 //이 행성들의 이름은 Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune 이다.
 //행성의 한글 이름을 입력하면 영어 이름을 반환하는 프로그램 생성
-// {
-//   const planet = {
-//     수성: 'Mercury',
-//     금성: 'Venus',
-//     지구: 'Earth',
-//     화성: 'Mars',
-//     목성: 'Jupiter',
-//     토성: 'Saturn',
-//     천왕성: 'Uranus',
-//     해왕성: 'Neptune',
-//   };
+{
+  const planet = {
+    수성: 'Mercury',
+    금성: 'Venus',
+    지구: 'Earth',
+    화성: 'Mars',
+    목성: 'Jupiter',
+    토성: 'Saturn',
+    천왕성: 'Uranus',
+    해왕성: 'Neptune',
+  };
 
-//   const name = prompt('행성의 이름을 한글로 입력하세요');
+  const name = prompt('행성의 이름을 한글로 입력하세요');
 
-//   for (let pName in planet) {
-//     if (pName == name) {
-//       console.log(planet[pName]);
-//       break;
-//     }
-//   }
-// }
+  for (let pName in planet) {
+    if (pName == name) {
+      console.log(planet[pName]);
+      break;
+    }
+  }
+}
 
 //문제 27: 객체 만들기
 //첫번째 입력에서는 학생 이름이 공백으로 구분되어 입력되고,
 //두번째에는 그 학생의 수학점수가 공백으로 구분되어 주어진다.
 // 두개를 합쳐 학생의 이름이 key이고 value가 수학점수인 객체를 출력
-// {
-//   const name = prompt('이름을 한 칸씩 공백을 주어 입력하세요');
-//   const score = prompt('점수를 한 칸씩 공백을 주어 입력하세요.');
+{
+  const name = prompt('이름을 한 칸씩 공백을 주어 입력하세요');
+  const score = prompt('점수를 한 칸씩 공백을 주어 입력하세요.');
 
-//   const nameArr = name.split(' ');
-//   const scoreArr = score.split(' ');
+  const nameArr = name.split(' ');
+  const scoreArr = score.split(' ');
 
-//   const obj = {}; //객체 생성
+  const obj = {}; //객체 생성
 
-//   //객체에 값 넣기
-//   for (let i = 0; i < nameArr.length; i++) {
-//     obj[nameArr[i]] = scoreArr[i];
-//   }
+  //객체에 값 넣기
+  for (let i = 0; i < nameArr.length; i++) {
+    obj[nameArr[i]] = scoreArr[i];
+  }
 
-//   console.log(obj);
-// }
+  console.log(obj);
+}
 
 // 문제 28: 2-gram (2개의 연속된 요소 출력)
 // 입력된 문자열을 2-gram으로 출력하는 프로그램
@@ -100,13 +100,13 @@
 // r i
 // i p
 // p t
-// {
-//   const str = prompt('문자열을 입력하세요.');
+{
+  const str = prompt('문자열을 입력하세요.');
 
-//   for (let i = 0; i < str.length; i++) {
-//     console.log(str[i], str[i + 1]);
-//   }
-// }
+  for (let i = 0; i < str.length; i++) {
+    console.log(str[i], str[i + 1]);
+  }
+}
 
 //문제 29: 알파벳 하나만을 입력하고 그 알파벳이 대문자이면 Yes,
 //아니면 No를 출력하는 프로그램
@@ -134,5 +134,53 @@
   const str = prompt('문자열을 입력하세요');
   const words = prompt('찾을 단어를 입력하세요');
 
-  str.startsWith(words);
+  console.log(str.indexOf(words));
+}
+
+//문제 31: 자바스크립트 자료형의 복잡도
+//배열 내장함수의 시간복잡도가 O(1)이 아닌것을 모두 고르시오. 3,5번
+//1) arr[i] => 하나의 인덱스 선택 크기와 관계없음
+//2) arr.push(5) => 배열의 끝에 하나의 값 삽입.
+//3) arr.slice() => 새로운 배열로 반환할 때 배열의 크기가 크다면 메모리 사용량 증가.
+//4) arr.pop() => 가장 끝에 있는 원소 제거.
+//4) arr.includes(5) => 매개변수에 해당하는 값 탐색. 배열의 크기가 클수록 탐색 시간 증가
+
+//시간복잡도 => 알고리즘의 성능을 나타냄
+//O(1) = 데이터의 크기와 관계없이 알고리즘의 성능이 일정함
+{
+  const arr = [1, 2, 3, 4, 5];
+}
+
+//문제 32: 문자열 만들기
+// 문자열을 입력받으면 단어의 갯수를 출력하는 프로그램
+{
+  const word = prompt('문자열을 입력하세요.').split(' ');
+
+  console.log(`단어의 갯수: ${word.length}개`);
+}
+
+//문제 33: 거꾸로 출력하기
+//한 줄에 여러개의 숫자가 입력되면 역순으로 그 숫자들을 하나씩 출력하는 프로그램을 작성하시오
+{
+  const num = prompt('여러 개의 숫자를 입력하세요. 예) 1 2 3 4 5').split(' ');
+  console.log(num.reverse());
+}
+
+//문제 34: sort 구현하기
+//키가 주어지면 순서대로 제대로 섰는지 확인하는 프로그램. 키는 공백으로 구분
+{
+  const height = prompt('여러 명의 키를 순서대로 입력하세요. 예) 150 153 166');
+  const sorted = height
+    .split(' ')
+    .sort((a, b) => a - b)
+    .join(' ');
+
+  console.log(height);
+  console.log(sorted);
+
+  if (height === sorted) {
+    console.log('yes');
+  } else {
+    console.log('no');
+  }
 }
