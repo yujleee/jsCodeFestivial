@@ -184,3 +184,37 @@
     console.log('no');
   }
 }
+
+//문제 35: Factory 함수 사용하기
+//2,3,4제곱을 할 수 있는 factory 함수를 만드려고 한다.
+//pass부분에 코드를 작성하여 two 함수를 완성.
+{
+  function one(n) {
+    function two(sq) {
+      const num = Math.pow(sq, n);
+      return num;
+    }
+    return two;
+  }
+
+  const a = one(2);
+  const b = one(3);
+  const c = one(4);
+
+  console.log(a(10));
+  console.log(b(10));
+  console.log(c(10));
+}
+
+//문제 36: 구구단 출력하기
+//1부터 9까지의 숫자 중 하나를 입력하면 그 단의 구구단 결과를 한 줄에 출력하는 프로그램
+{
+  const dan = prompt('1부터 9까지의 숫자 중 하나를 입력하세요');
+
+  let result = '';
+  for (let i = 1; i <= 9; i++) {
+    result += `${dan * i} `;
+  }
+
+  console.log(result);
+}
