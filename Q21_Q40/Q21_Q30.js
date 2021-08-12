@@ -218,3 +218,59 @@
 
   console.log(result);
 }
+
+//문제 37: 반장 선거
+//학생들이 뽑은 후보를 입력받으면 학생의 이름과 받은 표 수를 출력하는 프로그램
+{
+  const vote = prompt('후보 이름들을 공백 포함하여 작성하세요').split(' ');
+  let result = {}; //중복값을 저장하기 위한 객체.
+
+  vote.forEach((x) => {
+    //result[x] 가 undefined면 추가후 1. 이미 있으면 1추가.
+    if (result[x]) {
+      result[x] += 1;
+    } else {
+      result[x] = 1;
+    }
+  });
+
+  //result[x] = (result[x] || 0) + 1 과 같은 표현.
+
+  console.log(JSON.stringify(result)); //Json 문자열로 변경하여 출력
+}
+
+//문제 38: 아르바이트
+// 1~3위 학생까지 상으로 사탕을 준다. 1~3위 학생은 여러명일 수 있고,
+//중복되는 학생까지 포함하여 사탕을 준다.
+//학생들의 점수를 공백으로 구분하여 입력받고 사탕을 받을 학생 수를 출력
+{
+  const score = prompt('학생들을 점수를 공백으로 구분하여 입력하세요').split(' ');
+
+  score.map(function (n) {
+    return parseInt(n, 10); //정수로 변환
+  });
+
+  score.sort((a, b) => a - b);
+
+  let count = 0;
+  let arr = [];
+
+  while (arr.length < 3) {
+    let n = score.pop();
+    if (!arr.includes(n)) {
+      arr.push(n);
+    }
+    count += 1;
+  }
+
+  console.log(count);
+}
+
+//문제 39: 오타 수정하기
+//문장이 입력되면 모든 q를 e로 바꾸는 프로그램
+{
+  const str = prompt('영어로 문장을 입력하세요');
+  const change = str.replace(/q/gi, 'e');
+
+  console.log(change);
+}
