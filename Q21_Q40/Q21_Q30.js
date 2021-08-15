@@ -274,3 +274,26 @@
 
   console.log(change);
 }
+
+//문제 40: 첫 번째 입력으로 제한 무게가 주어지고 두 번째 입력으로는
+//함께한 친구들의 수 n이 주어진다.
+//그 다음으로는 차례대로 탑승할 친구들의 몸무게가 주어진다.
+//몸무게는 무작위로 주어진다
+{
+  const limit = parseInt(prompt('제한 무게를 입력하세요'));
+  const friends = parseInt(prompt('함께한 친구들의 수를 입력하세요'));
+
+  let total = 0;
+  let possable = 0;
+  for (let i = 1; i <= friends; i++) {
+    total += parseInt(prompt('무게를 입력하세요'));
+
+    console.log(i);
+    if (limit <= total) {
+      possable = i;
+      break;
+    }
+  }
+
+  console.log(possable);
+}
