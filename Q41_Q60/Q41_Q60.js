@@ -1,7 +1,7 @@
 'use strict';
 
 //문제 41: 소수 판별 프로그램
-//소수면 yes, 아니면 no
+//소수면 yes, 아니면 no를 출력
 {
   const num = parseInt(prompt('숫자를 입력하세요'));
 
