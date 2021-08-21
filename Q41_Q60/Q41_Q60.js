@@ -121,7 +121,64 @@
     ('이호준', '01050442903'),
   ];
 
-  //중복값이 있는 배열을 set 객체로 생성한다
+중복값이 있는 배열을 set 객체로 생성한다
   const set = new Set(people);
   console.log(`실제 접수인원: ${set.size}`);
+}
+
+//문제 48: 대소문자 바꿔서 출력하기
+//문자열이 주어지면 대문자와 소문자를 바꿔서 출력하는 프로그램 작성
+{
+  const str = prompt('문자열을 영어로 입력하세요');
+  let b = [];
+  let s = '';
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === a[i].toLowerCase()) {
+      b.push(a[i].toUpperCase());
+    } else {
+      b.push(a[i].toLowerCase());
+    }
+  }
+
+  for (let j = 0; j < b.length; j++) {
+    s += b[j];
+  }
+
+  console.log(s);
+}
+
+//문제 49: 최댓값 구하기
+//순서가 없는 10개의 숫자가 공백으로 구분되어 진다. 주어진 숫자들 중 최댓값 반환
+{
+  const arr = prompt('10개의 숫자를 공백을 넣어 입력하세요').split(' ');
+  console.log(arr);
+  arr.sort((a, b) => a - b).reverse();
+  console.log(arr[0]);
+}
+
+//문제 50: 버블정렬 구현하기
+{
+  function bubble(arr) {
+    let result = arr.slice();
+
+    for (let i = 0; i < result.length - 1; i++) {
+      for (let j = 0; j < result.length - i; j++) {
+        if (result[j] > result[j + 1]) {
+          let temp = result[j];
+          result[j] = result[j + 1];
+          result[j + 1] = temp;
+        }
+      }
+    }
+    return result;
+  }
+
+  const item = prompt('공백을 넣어 숫자 배열을 입력해주세요')
+    .split(' ')
+    .map((n) => {
+      return parseInt(n, 10);
+    });
+
+  console.log(bubble(item));
 }
