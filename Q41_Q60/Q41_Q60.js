@@ -182,3 +182,76 @@
 
   console.log(bubble(item));
 }
+
+
+//문제 51: merge sort (합병정렬)
+// 리스트의 길이가 0또는 1이면 정렬된 것으로 보고, 
+//그 이외에는 반으로 잘라 정렬 후 다시 하나의 리스트로 합병.
+{
+  function mergesort(arr){
+    if(arr.length <= 1){
+      return arr;
+    }
+
+    const mid = Math.floor(arr.length /2); //리스트를 반으로 자르기 위한 기준
+    const left = arr.slice(0,mid);
+    const right = arr.slice(mid);
+
+    return merge(mergesort(left), mergesort(right)); 
+   }
+
+   function merge(left, right){
+     let result = [];
+
+     while(left.length && right.length ){
+       if(left[0] < right[0]){
+         result.push(left.shift());
+       } else{
+         result.push(right.shift());
+       }
+     }
+
+
+     while(left.length){
+      result.push(arr[i]);
+     }result.push(left.shift());
+     while(right.length){
+      l  result.push(right.shift());
+     }
+
+     return result;
+   }
+
+   const array = prompt('배열을 입력하세요.').split(' ').map(n => parseInt(n, 10));
+   console.log(mergeSort(array));
+}
+
+
+// 문제 52: 퀵정렬 
+{
+  function quickSort(arr){
+    if (arr.length <= 1){
+      return arr;
+    } 
+
+    const pivot = arr[0];
+    const left = [];
+    const right = [];
+
+    for(let i=1; i<arr.length; i++){
+      if(arr[i] < pivot){
+        left.push(arr[i]);
+      } else{
+        right.push(arr[i]);
+      }
+    }
+
+    return arr;
+
+    
+    
+  }
+  const array = prompt('배열을 입력하세요.').split(' ').map(n => parseInt(n,10));
+
+  console.log(quickSort(array));
+}
