@@ -418,3 +418,51 @@
   console.log(num.toLocaleString());
   //toLocaleString() => 숫자를 특정 언어에 맞게 문자열로 반환해주는 함수.
 }
+
+//문제 59: 빈칸 채우기
+//총 문자열의 길이는 50으로 제한하고 사용자가 문자열을 입력하면 그 가운데에 문자열 정렬, 나머지 빈 부분에는 =
+{
+  const str = prompt('문자열을 입력하세요.');
+
+  let arr = '';
+
+  const half_length = (50 - str.length) / 2;
+
+  for (let i = 0; i < half_length; i++) {
+    arr += '=';
+  }
+
+  arr += str;
+
+  for (let i = 0; i < half_length; i++) {
+    arr += '=';
+  }
+
+  console.log(arr);
+  console.log(arr.length);
+}
+
+//문제 60: 번호 매기기
+//데이터에 입력된 이름을 가나다순으로 정렬하고 번호를 배정
+{
+  const student = [
+    '강은지',
+    '김유정',
+    '박현서',
+    '최성훈',
+    '홍유진',
+    '박지호',
+    '권윤일',
+    '김채리',
+    '한지호',
+    '김진이',
+    '김민호',
+    '강채연',
+  ];
+
+  student.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+
+  for (let i = 1; i < student.length; i++) {
+    console.log(`번호: ${i}, 이름: ${student[i]}`);
+  }
+}
